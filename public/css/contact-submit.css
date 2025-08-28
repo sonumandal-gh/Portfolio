@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1a0033, #330066);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
+}
+
+.success-box {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  max-width: 500px;
+  width: 90%;
+  animation: popIn 0.8s ease;
+}
+
+.success-box h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #00ffcc, #00ff66);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.success-box p {
+  font-size: 18px;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.success-box a {
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  background: linear-gradient(90deg, #ff6600, #ff004c);
+  color: #fff;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  transition: 0.3s;
+}
+
+.success-box a:hover {
+  background: linear-gradient(90deg, #ff004c, #ff6600);
+  transform: translateY(-3px);
+}
+
+/* Animation */
+@keyframes popIn {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

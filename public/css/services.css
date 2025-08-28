@@ -1,0 +1,117 @@
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #0b0019, #1e003d, #42006c);
+  color: white;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Services Section */
+.services {
+  text-align: center;
+  padding: 4rem 2rem;
+  width: 100%;
+}
+
+.services .header {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  color: #ff4da6;
+  text-shadow: 0 0 10px rgba(255, 77, 166, 0.7);
+  animation: glow 2s infinite alternate;
+}
+
+/* Glow animation */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #ff4da6, 0 0 20px #ff80bf;
+  }
+  to {
+    text-shadow: 0 0 20px #ff66cc, 0 0 40px #ff1a8c;
+  }
+}
+
+/* Container */
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+/* Individual Card */
+.service-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 2rem;
+  width: 280px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover Effect */
+.service-card:hover {
+  transform: translateY(-12px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(255, 0, 150, 0.5);
+}
+
+/* Floating glow behind cards */
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(255, 0, 150, 0.2), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+/* Icons */
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #ffcc00;
+  transition: color 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+  color: #00ff88;
+}
+
+/* Title & Text */
+.service-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem;
+  color: #ffcc00;
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .services-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}

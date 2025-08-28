@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1a0033, #330066);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.about-container {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  max-width: 1000px;
+  padding: 40px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #ff004c, #ff6600);
+  -webkit-background-clip: text;   /* ✅ Added */
+  -webkit-text-fill-color: transparent; /* ✅ Gradient text visible */
+}
+
+.about-text p {
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.about-text span {
+  font-weight: bold;
+  color: #00ffff;
+}
+
+.about-img {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about-img img {
+  max-width: 300px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-img img {
+    max-width: 250px;
+  }
+}

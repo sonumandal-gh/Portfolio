@@ -1,0 +1,104 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #0b0019; /* dark purple/black shade */
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .contact-container {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+      width: 100%;
+      max-width: 450px;
+    }
+
+    .contact-left-title h2 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      text-align: center;
+      color: #ff9800;
+    }
+
+    .contact-left-title hr {
+      width: 50px;
+      height: 3px;
+      border: none;
+      background: #ff9800;
+      margin: 0 auto 1.5rem;
+      border-radius: 3px;
+    }
+
+    .contact-inputs {
+      width: 100%;
+      padding: 12px 15px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .contact-inputs::placeholder {
+      color: #bbb;
+    }
+
+    .contact-inputs:focus {
+      outline: none;
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid #ff9800;
+    }
+
+    textarea {
+      resize: none;
+      height: 120px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 15px;
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #ff9800, #ff5722);
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #ff5722, #ff9800);
+    }
+
+    button img {
+      width: 18px;
+      height: 18px;
+    }
+
+    @media (max-width: 500px) {
+      .contact-container {
+        padding: 1.5rem;
+      }
+      .contact-left-title h2 {
+        font-size: 1.5rem;
+      }
+    }
