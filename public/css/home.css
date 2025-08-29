@@ -81,7 +81,7 @@ body {
 
 .content h2 { font-size: 1.8rem; font-weight: 600; }
 .content h1 {
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: 800;
   color: #ff0077;
   animation: typing 3s steps(15, end) infinite alternate, blink 0.7s step-end infinite;
