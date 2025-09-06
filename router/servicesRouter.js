@@ -1,11 +1,8 @@
-const path = require('path');
 const express = require('express');
-const rootDir = require('../utils/pathutil');
-
 const servicesRouter = express.Router();
 
-servicesRouter.get("/services", (req, res) => {
-  res.sendFile(path.join(rootDir, "views", "services.html"));
-});
+const servicesController = require("../controllers/homes");
+
+servicesRouter.get("/services",servicesController.getServicePage);
 
 module.exports = servicesRouter;

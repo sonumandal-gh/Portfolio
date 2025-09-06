@@ -1,11 +1,10 @@
-const path = require('path');
+const express=require('express');
 const express = require('express');
-const rootDir = require('../utils/pathutil');
 
-const hireMe = express.Router();
+const contactController = require("../controllers/homes"); 
 
-aboutRouter.get("/hireMe", (req, res) => {
-  res.sendFile(path.join(rootDir, "views", "hireMe.html"));
-});
+// const hireMe = express.Router();
+
+aboutRouter.get("/hireMe",contactController.getHireMeHireMe);
 
 module.exports = hireMe;

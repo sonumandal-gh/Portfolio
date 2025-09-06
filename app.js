@@ -5,10 +5,18 @@ const homeRouter = require('./router/homeRouter');
 const aboutRouter = require('./router/aboutRouter');
 const servicesRouter = require('./router/servicesRouter');
 const contactRouter = require('./router/contactRouter');
+const workRouter = require('./router/workRouter');
+const projectRouter=require('./router/projectRouter');
+const errorsController=require("./controllers/errors");
 
 const rootDir = require('./utils/pathutil');
 
 const app = express();
+
+// View Engine Setup (EJS)
+app.set('view engine', 'ejs');
+app.set('views', path.join(rootDir, 'views'));
+
 
 app.use(express.urlencoded({ extended: true }))
 
@@ -26,11 +34,11 @@ app.use(homeRouter);       // /
 app.use(aboutRouter);      // /about
 app.use(servicesRouter);   // /services
 app.use(contactRouter);    // /contact
+app.use(workRouter);
+app.use(projectRouter);
 
 // 404 Page (last middleware)
-app.use((req, res) => {
-  res.status(404).sendFile(path.join(rootDir, 'views', '404.html'));
-});
+app.use(errorsController.getErrorPage);
 
 // Start Server
 const PORT = 3000;
