@@ -9,7 +9,7 @@ const workRouter = require('./router/workRouter');
 const projectRouter=require('./router/projectRouter');
 const errorsController=require("./controllers/errors");
 
-const rootDir = require('./utils/pathutil');
+const rootDir = require('./utils/pathUtil');
 
 const app = express();
 
@@ -41,7 +41,7 @@ app.use(projectRouter);
 app.use(errorsController.getErrorPage);
 
 // Start Server
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`✅ Server running at http://localhost:${PORT}`);
 });
