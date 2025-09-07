@@ -3,17 +3,17 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "body-parser": "^1.20.2",
+    "autoprefixer": "^10.4.21",
+    "body-parser": "^2.2.0",
     "ejs": "^3.1.10",
-    "express": "^4.19.2"
-  },
-  "devDependencies": {
+    "express": "^5.1.0",
     "nodemon": "^3.1.10"
   }
 }
