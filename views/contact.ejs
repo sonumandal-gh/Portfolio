@@ -1,21 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>contect me</title>
-    <link rel="stylesheet" href="/css/contact.css">
-</head>
+ <%- include('partials/head', { cssFile }) %>
 <body>
     <div class="contact-container">
-    <form action="contact-submit" method="POST" class="contact-left">
+   <form action="contact-submit" method="POST" class="'contact-left">
       <div class="contact-left-title">
         <h2>Get in Touch</h2>
         <hr>
       </div>
       
-      <input type="hidden" name="access_key" value="7fe29109-d412-418d-a3ec-cc14e8a2332d">
-
       <input type="text" name="name" placeholder="Your Name" class="contact-inputs" required>
       <input type="email" name="email" placeholder="Your Email" class="contact-inputs" required>
       <input type="tel" name="number" placeholder="Your Number" class="contact-inputs" required>

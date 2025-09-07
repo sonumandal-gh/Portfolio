@@ -1,36 +1,55 @@
-const path = require("path");
-const rootDir = require("../utils/pathUtil");
+// const path = require("path");
+// const rootDir = require("../utils/pathUtil");
 
 exports.getAboutPage = (req, res, next) => {
-  res.sendFile(path.join(rootDir, "views", "about.html"));
+  res.render("about", {
+    pageTitle: "about Page",
+    cssFile: "about"   
+  });
 };
 
 
 exports.getContactPage=(req, res) => {
-  res.sendFile(path.join(rootDir, "views", "contact.html"));
+  res.render("contact", {
+    pageTitle: "contact Page",
+    cssFile: "contact"   
+  });
 };
 
 exports.postContactPage=(req, res) => {
    console.log(req.body);
-  res.sendFile(path.join(rootDir, "views", "contact-submit.html"));
+  res.render("contact-submit", {
+    pageTitle: "submit Page",
+    cssFile: "contact-submit"   
+  });
 };
 
-exports.getHireMe=(req, res) => {
-  res.sendFile(path.join(rootDir, "views", "hireMe.html"));
+
+exports.getHomePage = (req, res) => {
+  res.render("home", {
+    pageTitle: "Home Page",
+    cssFile: "home"   
+  });
 };
 
-exports.getHomePage=(req, res) => {
-  res.sendFile(path.join(rootDir, 'views', 'home.html'));
-}
 
 exports.getprojectPage=(req, res) => {
-  res.sendFile(path.join(rootDir, "views", "project.html"));
+  res.render("project", {
+    pageTitle: "project Page",
+    cssFile: "project"   
+  });
 };
 
 exports.getServicePage=(req, res) => {
-  res.sendFile(path.join(rootDir, "views", "services.html"));
+  res.render("services", {
+    pageTitle: "services Page",
+    cssFile: "services"  
+  });
 };
 
 exports.getWorkPage=(req, res) => {
-  res.sendFile(path.join(rootDir, "views", "work.html"));
+ res.render("work", {
+    pageTitle: "Work Page",
+    cssFile: "work"  
+  });
 };
