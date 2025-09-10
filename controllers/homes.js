@@ -1,5 +1,6 @@
-// const path = require("path");
-// const rootDir = require("../utils/pathUtil");
+const path = require("path");
+const rootDir = require("../utils/pathUtil");
+const fs = require("fs");
 
 exports.getAboutPage = (req, res, next) => {
   res.render("about", {
@@ -16,11 +17,15 @@ exports.getContactPage=(req, res) => {
   });
 };
 
-exports.postContactPage=(req, res) => {
-   console.log(req.body);
+exports.postContactPage = (req, res) => {
+  console.log(req.body); // yaha data console me aayega
+
+  // File me data save karo (req.body ko string banake)
+fs.appendFileSync("submissions.txt", JSON.stringify(req.body) + "\n");
+
   res.render("contact-submit", {
-    pageTitle: "submit Page",
-    cssFile: "contact-submit"   
+    pageTitle: "Submit Page",
+    cssFile: "contact-submit",
   });
 };
 
