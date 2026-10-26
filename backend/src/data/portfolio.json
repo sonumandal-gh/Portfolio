@@ -1,0 +1,349 @@
+{
+  "profile": {
+    "name": "Sonu Mandal",
+    "role": "MERN Stack Developer | Backend Developer",
+    "location": "Jaipur, Rajasthan, India",
+    "phone": "+91 8252663421",
+    "email": "sonu.bcastudent@gmail.com",
+    "linkedin": "https://linkedin.com/in/sonu-mandal-9b878a344",
+    "linkedinUsername": "sonu-mandal-9b878a344",
+    "github": "https://github.com/sonumandal-gh",
+    "githubUsername": "sonumandal-gh",
+    "portfolioWebsite": "https://sonumandal.in",
+    "summary": "MERN Stack Developer and BCA student (CGPA 8.48) with a backend internship and 2 live full-stack applications deployed. Experienced in building REST APIs with Node.js, Express.js and MongoDB, and in implementing JWT authentication, Google OAuth, Razorpay payments and MVC architecture across 3 backend projects.",
+    "status": "Available for Full-time Roles & Internships",
+    "experienceYears": "1+ Years Full-Stack & Backend Experience",
+    "cgpa": "8.48",
+    "avatar": "/assets/images/avatar.jpg",
+    "resumeUrl": "assets/docs/Sonu_Mandal_Resume.html"
+  },
+  "stats": [
+    {
+      "label": "Live Deployed Apps",
+      "value": "2+",
+      "icon": "rocket"
+    },
+    {
+      "label": "Backend Projects",
+      "value": "3+",
+      "icon": "server"
+    },
+    {
+      "label": "Academic CGPA",
+      "value": "8.48",
+      "icon": "award"
+    },
+    {
+      "label": "REST Endpoints Engineered",
+      "value": "30+",
+      "icon": "code"
+    }
+  ],
+  "technicalSkills": {
+    "languages": [
+      {
+        "name": "JavaScript (ES6+)",
+        "level": 92,
+        "category": "Language",
+        "highlight": true
+      },
+      {
+        "name": "C++",
+        "level": 80,
+        "category": "Language",
+        "highlight": false
+      }
+    ],
+    "backend": [
+      {
+        "name": "Node.js",
+        "level": 90,
+        "category": "Backend",
+        "highlight": true
+      },
+      {
+        "name": "Express.js",
+        "level": 92,
+        "category": "Backend",
+        "highlight": true
+      },
+      {
+        "name": "REST API Design",
+        "level": 95,
+        "category": "Backend",
+        "highlight": true
+      },
+      {
+        "name": "MVC Architecture",
+        "level": 90,
+        "category": "Backend",
+        "highlight": true
+      },
+      {
+        "name": "CRUD Operations",
+        "level": 95,
+        "category": "Backend",
+        "highlight": false
+      },
+      {
+        "name": "Middleware Development",
+        "level": 88,
+        "category": "Backend",
+        "highlight": true
+      }
+    ],
+    "authAndSecurity": [
+      {
+        "name": "JWT (JSON Web Tokens)",
+        "level": 92,
+        "category": "Security",
+        "highlight": true
+      },
+      {
+        "name": "Google OAuth 2.0",
+        "level": 85,
+        "category": "Security",
+        "highlight": true
+      },
+      {
+        "name": "bcrypt Hashing",
+        "level": 90,
+        "category": "Security",
+        "highlight": false
+      },
+      {
+        "name": "Protected Routes",
+        "level": 94,
+        "category": "Security",
+        "highlight": true
+      },
+      {
+        "name": "Input Validation & Sanitization",
+        "level": 88,
+        "category": "Security",
+        "highlight": false
+      }
+    ],
+    "frontend": [
+      {
+        "name": "React.js",
+        "level": 88,
+        "category": "Frontend",
+        "highlight": true
+      },
+      {
+        "name": "HTML5",
+        "level": 95,
+        "category": "Frontend",
+        "highlight": false
+      },
+      {
+        "name": "CSS3 / Modern CSS",
+        "level": 90,
+        "category": "Frontend",
+        "highlight": false
+      },
+      {
+        "name": "Responsive Web Design",
+        "level": 92,
+        "category": "Frontend",
+        "highlight": false
+      }
+    ],
+    "databases": [
+      {
+        "name": "MongoDB",
+        "level": 90,
+        "category": "Database",
+        "highlight": true
+      },
+      {
+        "name": "Mongoose ODM",
+        "level": 92,
+        "category": "Database",
+        "highlight": true
+      },
+      {
+        "name": "MySQL",
+        "level": 82,
+        "category": "Database",
+        "highlight": false
+      }
+    ],
+    "tools": [
+      {
+        "name": "Git",
+        "level": 90,
+        "category": "Tool",
+        "highlight": true
+      },
+      {
+        "name": "GitHub",
+        "level": 92,
+        "category": "Tool",
+        "highlight": true
+      },
+      {
+        "name": "Postman API Client",
+        "level": 94,
+        "category": "Tool",
+        "highlight": true
+      },
+      {
+        "name": "VS Code",
+        "level": 95,
+        "category": "Tool",
+        "highlight": false
+      },
+      {
+        "name": "Razorpay Gateway",
+        "level": 88,
+        "category": "Integration",
+        "highlight": true
+      }
+    ]
+  },
+  "projects": [
+    {
+      "id": "skillarena",
+      "title": "SkillArena — MERN Stack Coding & DSA Platform",
+      "category": "Full Stack",
+      "duration": "Jul 2026 – Present",
+      "status": "Live & Active",
+      "liveUrl": "https://skillarena.sonumandal.in",
+      "githubUrl": "https://github.com/sonumandal-gh/skillarena",
+      "image": "assets/images/skillarena.jpg",
+      "badge": "Flagship Project",
+      "shortDescription": "High-performance coding and DSA practice platform with live test case execution, XP scoring, and real-time leaderboard ranking.",
+      "techStack": [
+        "MongoDB",
+        "Express.js",
+        "React.js",
+        "Node.js",
+        "REST API",
+        "JWT"
+      ],
+      "keyHighlights": [
+        "Engineered a MERN-stack coding and DSA practice platform with JWT-secured user sessions, deployed live.",
+        "Implemented REST endpoints across 5 feature areas: challenge management, code submissions, XP scoring, user statistics and leaderboard ranking.",
+        "Designed Mongoose models and MVC controllers, integrated with a React.js frontend.",
+        "Engineered robust schema validations and error-handling pipelines for reliable submission evaluations."
+      ],
+      "apiFeatures": [
+        "POST /api/challenges/submit — Evaluate user code & award XP dynamically",
+        "GET /api/leaderboard — Compute real-time rank ordering based on global XP",
+        "GET /api/user/stats — Aggregate solved challenges & streak metrics"
+      ]
+    },
+    {
+      "id": "grocery-website",
+      "title": "Grocery Website — Full Stack E-Commerce Application",
+      "category": "Full Stack",
+      "duration": "Jan 2026 – Mar 2026",
+      "status": "Deployed Live",
+      "liveUrl": "https://grocery.sonumandal.in",
+      "githubUrl": "https://github.com/sonumandal-gh/grocery-ecommerce",
+      "image": "assets/images/grocery.jpg",
+      "badge": "E-Commerce + Payments",
+      "shortDescription": "Full-stack MERN e-commerce store with dual auth (JWT & Google OAuth), inventory management, and complete Razorpay payment integration.",
+      "techStack": [
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Mongoose",
+        "React.js",
+        "JWT",
+        "Google OAuth",
+        "Razorpay"
+      ],
+      "keyHighlights": [
+        "Developed a full-stack e-commerce platform on the MERN stack with MVC architecture, deployed live.",
+        "Architected REST APIs for 4 modules (products, cart, orders, users), each supporting full CRUD operations.",
+        "Secured routes with 2 authentication methods: JWT sessions and Google OAuth, restricting sensitive endpoints to logged-in users.",
+        "Integrated the Razorpay payment gateway, enabling an end-to-end checkout flow from shopping cart to paid order confirmation."
+      ],
+      "apiFeatures": [
+        "POST /api/payment/razorpay/order — Generate secure order signature & keys",
+        "POST /api/payment/verify — Verify Razorpay cryptographic HMAC webhook/payload",
+        "GET /api/cart & PUT /api/cart — Atomic cart synchronization per authenticated user"
+      ]
+    },
+    {
+      "id": "hostel-booking-system",
+      "title": "Hostel Booking System — Backend API Services",
+      "category": "Backend API",
+      "duration": "Mar 2025 – Apr 2025",
+      "status": "Completed",
+      "liveUrl": null,
+      "githubUrl": "https://github.com/sonumandal-gh/hostel-booking-system",
+      "image": "assets/images/hostel.jpg",
+      "badge": "Backend Microservices",
+      "shortDescription": "Modular backend services managing hostel room allocations, room availability checks, pricing tiers, and Postman-tested REST APIs.",
+      "techStack": [
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Mongoose",
+        "REST API",
+        "Postman"
+      ],
+      "keyHighlights": [
+        "Delivered backend services for hostel room booking, covering room creation, updates and availability checks.",
+        "Added validation and error handling to keep data consistent and API responses reliable.",
+        "Tested every endpoint in Postman throughout development, maintaining 100% test scenario coverage.",
+        "Structured modular Express routes following clean separation of concerns and MVC pattern."
+      ],
+      "apiFeatures": [
+        "GET /api/rooms/availability — Dynamic check across date ranges and room tiers",
+        "POST /api/rooms — Admin-protected room creation with validation middleware",
+        "POST /api/bookings — Atomically book room with double-booking prevention"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "role": "Backend Developer Intern",
+      "company": "UpToSkills (UTS)",
+      "period": "Jun 2026 – Sep 2026",
+      "type": "Internship",
+      "location": "Remote / India",
+      "technologies": [
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "MVC Architecture",
+        "Git",
+        "Postman"
+      ],
+      "responsibilities": [
+        "Maintained and extended backend features in Node.js, Express.js and MongoDB, following MVC architecture.",
+        "Wrote and tested REST API endpoints, resolving bugs to improve response reliability and error resilience.",
+        "Collaborated with the development team on code reviews, Git workflows, and production deployments."
+      ],
+      "certificate": "Backend Developer Internship Certificate — UpToSkills (UTS) 2026"
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Computer Applications (BCA)",
+      "specialization": "Full Stack and Cloud Computing",
+      "institution": "Vivekananda Global University, Jaipur",
+      "duration": "2024 – 2027",
+      "cgpa": "8.48",
+      "status": "Currently Pursuing (Final Year 2027)",
+      "highlights": [
+        "Specialized in Full Stack Web Development, Cloud Computing, and Database Management Systems.",
+        "Maintained academic excellence with an 8.48 CGPA across semesters."
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "title": "Backend Developer Internship Certificate",
+      "issuer": "UpToSkills (UTS)",
+      "year": "2026",
+      "credentialUrl": "#",
+      "description": "Verified practical internship experience in Node.js, Express, MongoDB, and REST API development."
+    }
+  ]
+}

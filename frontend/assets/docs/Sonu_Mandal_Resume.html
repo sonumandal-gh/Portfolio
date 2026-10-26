@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sonu Mandal - Resume | MERN Stack & Backend Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0f172a;
+      --secondary: #334155;
+      --accent: #0284c7;
+      --border: #cbd5e1;
+      --bg: #ffffff;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--primary);
+      background-color: #f1f5f9;
+      line-height: 1.5;
+      padding: 2rem 1rem;
+    }
+    .resume-container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: var(--bg);
+      padding: 3rem 3.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+    .header {
+      text-align: center;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .name {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      text-transform: uppercase;
+      color: #0b192c;
+    }
+    .title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 0.25rem;
+    }
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem 1.25rem;
+      font-size: 0.88rem;
+      color: var(--secondary);
+      margin-top: 0.6rem;
+    }
+    .contact-info a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+    .section {
+      margin-bottom: 1.5rem;
+    }
+    .section-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #0b192c;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.3rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .item {
+      margin-bottom: 1.1rem;
+    }
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #0f172a;
+    }
+    .item-sub {
+      font-size: 0.88rem;
+      color: var(--secondary);
+      margin-top: 0.15rem;
+      margin-bottom: 0.35rem;
+    }
+    .item-sub a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .date {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #64748b;
+    }
+    ul {
+      margin-left: 1.25rem;
+      font-size: 0.88rem;
+      color: #334155;
+    }
+    li {
+      margin-bottom: 0.3rem;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 0.5rem 1rem;
+      font-size: 0.88rem;
+    }
+    .skill-label {
+      font-weight: 600;
+      color: #0f172a;
+    }
+    .skill-list {
+      color: #334155;
+    }
+    .action-bar {
+      max-width: 850px;
+      margin: 0 auto 1.5rem auto;
+      display: flex;
+      justify-content: flex-end;
+      gap: 1rem;
+    }
+    .btn {
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: none;
+      transition: all 0.2s;
+    }
+    .btn-print {
+      background: #0284c7;
+      color: white;
+    }
+    .btn-print:hover {
+      background: #0369a1;
+    }
+    .btn-back {
+      background: #e2e8f0;
+      color: #1e293b;
+    }
+    .btn-back:hover {
+      background: #cbd5e1;
+    }
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+      .resume-container {
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+      }
+      .action-bar {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="action-bar">
+    <a href="../../index.html" class="btn btn-back">← Back to Portfolio</a>
+    <button onclick="window.print()" class="btn btn-print">🖨️ Print / Save as PDF</button>
+  </div>
+
+  <div class="resume-container">
+    <header class="header">
+      <h1 class="name">SONU MANDAL</h1>
+      <div class="title">MERN Stack Developer | Backend Developer</div>
+      <div class="contact-info">
+        <span>📍 Jaipur, Rajasthan, India</span>
+        <span>📞 +91 8252663421</span>
+        <span>✉️ <a href="mailto:sonu.bcastudent@gmail.com">sonu.bcastudent@gmail.com</a></span>
+      </div>
+      <div class="contact-info" style="margin-top: 0.35rem;">
+        <span>🔗 <a href="https://linkedin.com/in/sonu-mandal-9b878a344" target="_blank">linkedin.com/in/sonu-mandal-9b878a344</a></span>
+        <span>🐙 <a href="https://github.com/sonumandal-gh" target="_blank">github.com/sonumandal-gh</a></span>
+      </div>
+      <div class="contact-info" style="margin-top: 0.35rem;">
+        <span>🌐 <a href="https://grocery.sonumandal.in" target="_blank">grocery.sonumandal.in</a></span>
+        <span>🌐 <a href="https://skillarena.sonumandal.in" target="_blank">skillarena.sonumandal.in</a></span>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2 class="section-title">Professional Summary</h2>
+      <p style="font-size: 0.88rem; color: #334155; text-align: justify;">
+        MERN Stack Developer and BCA student (CGPA 8.48) with a backend internship and 2 live full-stack applications deployed. Experienced in building REST APIs with Node.js, Express.js and MongoDB, and in implementing JWT authentication, Google OAuth, Razorpay payments and MVC architecture across 3 backend projects.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-grid">
+        <span class="skill-label">Languages:</span>
+        <span class="skill-list">JavaScript, C++</span>
+
+        <span class="skill-label">Backend:</span>
+        <span class="skill-list">Node.js, Express.js, REST API design, MVC architecture, CRUD operations, middleware development</span>
+
+        <span class="skill-label">Auth & Security:</span>
+        <span class="skill-list">JWT, Google OAuth, bcrypt password hashing, protected routes, input validation</span>
+
+        <span class="skill-label">Frontend:</span>
+        <span class="skill-list">HTML5, CSS3, React.js</span>
+
+        <span class="skill-label">Databases:</span>
+        <span class="skill-list">MongoDB (Mongoose), MySQL</span>
+
+        <span class="skill-label">Tools:</span>
+        <span class="skill-list">Git, GitHub, Postman, VS Code</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Education</h2>
+      <div class="item">
+        <div class="item-header">
+          <span>Bachelor of Computer Applications — Full Stack and Cloud Computing</span>
+          <span class="date">2027</span>
+        </div>
+        <div class="item-sub">Vivekananda Global University, Jaipur | CGPA: 8.48</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Internship Experience</h2>
+      <div class="item">
+        <div class="item-header">
+          <span>Backend Developer Intern — UpToSkills (UTS)</span>
+          <span class="date">Jun 2026 – Sep 2026</span>
+        </div>
+        <ul>
+          <li>Maintained and extended backend features in Node.js, Express.js and MongoDB, following MVC architecture.</li>
+          <li>Wrote and tested REST API endpoints, resolving bugs to improve response reliability.</li>
+          <li>Collaborated with the development team on code reviews, Git workflows and deployments.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Project Experience</h2>
+
+      <div class="item">
+        <div class="item-header">
+          <span>SkillArena — MERN Stack Coding & DSA Platform</span>
+          <span class="date">Jul 2026 – Present</span>
+        </div>
+        <div class="item-sub">
+          <strong>Live:</strong> <a href="https://skillarena.sonumandal.in" target="_blank">skillarena.sonumandal.in</a> | 
+          <strong>Tech:</strong> MongoDB, Express.js, React.js, Node.js, REST API, JWT
+        </div>
+        <ul>
+          <li>Engineered a MERN-stack coding and DSA practice platform with JWT-secured user sessions, deployed live.</li>
+          <li>Implemented REST endpoints across 5 feature areas: challenge management, code submissions, XP scoring, user statistics and leaderboard ranking.</li>
+          <li>Designed Mongoose models and MVC controllers, integrated with a React.js frontend.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <span>Grocery Website — Full Stack E-Commerce Application</span>
+          <span class="date">Jan 2026 – Mar 2026</span>
+        </div>
+        <div class="item-sub">
+          <strong>Live:</strong> <a href="https://grocery.sonumandal.in" target="_blank">grocery.sonumandal.in</a> | 
+          <strong>Tech:</strong> Node.js, Express.js, MongoDB, Mongoose, React.js, JWT, Google OAuth, Razorpay
+        </div>
+        <ul>
+          <li>Developed a full-stack e-commerce platform on the MERN stack with MVC architecture, deployed live.</li>
+          <li>Architected REST APIs for 4 modules (products, cart, orders, users), each supporting full CRUD operations.</li>
+          <li>Secured routes with 2 authentication methods, JWT sessions and Google OAuth, restricting sensitive endpoints to logged-in users.</li>
+          <li>Integrated the Razorpay payment gateway, enabling an end-to-end flow from cart to paid order.</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <div class="item-header">
+          <span>Hostel Booking System</span>
+          <span class="date">Mar 2025 – Apr 2025</span>
+        </div>
+        <div class="item-sub">
+          <strong>Tech:</strong> Node.js, Express.js, MongoDB, REST API
+        </div>
+        <ul>
+          <li>Delivered backend services for hostel room booking, covering room creation, updates and availability checks.</li>
+          <li>Added validation and error handling to keep data consistent and API responses reliable.</li>
+          <li>Tested every endpoint in Postman throughout development.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Certifications</h2>
+      <div class="item">
+        <div class="item-header">
+          <span>Backend Developer Internship Certificate — UpToSkills (UTS)</span>
+          <span class="date">2026</span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>

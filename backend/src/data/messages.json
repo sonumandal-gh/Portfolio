@@ -1,0 +1,52 @@
+[
+  {
+    "id": "msg_1793013242863_asksk3",
+    "name": "Sonu",
+    "email": "sonu.bcastudent@gmail.com",
+    "subject": "full",
+    "message": "you are select for job",
+    "ip": "::1",
+    "read": false,
+    "createdAt": "2026-10-26T11:14:02.863Z"
+  },
+  {
+    "id": "msg_1793012327196_umzrjr",
+    "name": "Sonu",
+    "email": "sonu.bcastudent@gmail.com",
+    "subject": "frontend developer role",
+    "message": "please come and join our company",
+    "ip": "::1",
+    "read": false,
+    "createdAt": "2026-10-26T10:58:47.197Z"
+  },
+  {
+    "id": "msg_1793011545768_9vws09",
+    "name": "Sonu",
+    "email": "sonu.bcastudent@gmail.com",
+    "subject": "full",
+    "message": "join our company",
+    "ip": "::1",
+    "read": false,
+    "createdAt": "2026-10-26T10:45:45.768Z"
+  },
+  {
+    "id": "msg_1792935804129_3wa1sz",
+    "name": "Sonu",
+    "email": "sonu.bcastudent@gmail.com",
+    "subject": "frontend developer role",
+    "message": "come and join our company",
+    "ip": "::1",
+    "read": false,
+    "createdAt": "2026-10-25T13:43:24.130Z"
+  },
+  {
+    "id": "msg_1792932797706_4fky9x",
+    "name": "Hiring Manager",
+    "email": "recruiter@techcorp.com",
+    "subject": "MERN Developer Role",
+    "message": "We were impressed by your SkillArena and Grocery e-commerce projects! Would love to interview you.",
+    "ip": "::1",
+    "read": false,
+    "createdAt": "2026-10-25T12:53:17.706Z"
+  }
+]
