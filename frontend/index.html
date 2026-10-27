@@ -51,12 +51,6 @@
       </nav>
 
       <div class="nav-actions">
-        <!-- Live Backend Server Health Status -->
-        <div class="server-status-pill" id="serverStatusPill" title="Checks connection with backend on port 5000">
-          <span class="status-dot"></span>
-          <span id="serverStatusText">API: Checking...</span>
-        </div>
-
         <a href="assets/docs/Sonu_Mandal_Resume.html" target="_blank" class="btn btn-outline btn-sm" id="navResumeBtn">
           📄 Resume
         </a>
@@ -828,7 +822,7 @@
           <span class="section-tag">Get In Touch</span>
           <h2 class="section-title">Let's Build Something <span class="gradient-text">Exceptional</span></h2>
           <p class="section-desc">
-            Have a role, project, or question? Send a message directly into my backend database.
+            Have a role, project, or question? Feel free to reach out and let's start a conversation.
           </p>
         </div>
 
@@ -893,31 +887,31 @@
 
           <!-- Right: Live Contact Form -->
           <div class="contact-form-container">
-            <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Send a Message Directly to API</h3>
+            <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Send Me a Message</h3>
             <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.5rem;">
-              Submissions are validated via Express middleware and persisted to the server.
+              Have a project in mind, a job opportunity, or just want to connect? Drop a message below and I'll get back to you shortly.
             </p>
 
             <form id="portfolioContactForm">
               <div class="form-row">
                 <div class="form-group">
                   <label class="form-label" for="contactName">Your Name *</label>
-                  <input type="text" id="contactName" class="form-input" placeholder="e.g. Alex Kumar" required>
+                  <input type="text" id="contactName" class="form-input" placeholder="Your Name" required>
                 </div>
                 <div class="form-group">
                   <label class="form-label" for="contactEmail">Your Email *</label>
-                  <input type="email" id="contactEmail" class="form-input" placeholder="e.g. alex@company.com" required>
+                  <input type="email" id="contactEmail" class="form-input" placeholder="yourname@example.com" required>
                 </div>
               </div>
 
               <div class="form-group">
                 <label class="form-label" for="contactSubject">Subject</label>
-                <input type="text" id="contactSubject" class="form-input" placeholder="e.g. Full-Stack / Backend Developer Opportunity">
+                <input type="text" id="contactSubject" class="form-input" placeholder="e.g. Job Opportunity / Project Collaboration">
               </div>
 
               <div class="form-group">
                 <label class="form-label" for="contactMessage">Your Message *</label>
-                <textarea id="contactMessage" class="form-textarea" placeholder="Hi Sonu, I reviewed your SkillArena and Grocery e-commerce projects and would love to connect..." required></textarea>
+                <textarea id="contactMessage" class="form-textarea" placeholder="Hi Sonu, I'd like to get in touch regarding..." required></textarea>
               </div>
 
               <button type="submit" class="btn btn-primary" id="contactSubmitBtn" style="width: 100%;">

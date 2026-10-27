@@ -5,7 +5,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initTypingEffect();
-  initBackendStatusCheck();
   initProjectFilters();
   initContactForm();
   initCopyButtons();
@@ -118,35 +117,6 @@ function initTypingEffect() {
   type();
 }
 
-/* ==========================================================================
-   3. Backend Server Health Monitor
-   ========================================================================== */
-async function initBackendStatusCheck() {
-  const statusPill = document.getElementById('serverStatusPill');
-  const statusText = document.getElementById('serverStatusText');
-  if (!statusPill || !statusText) return;
-
-  async function check() {
-    try {
-      const result = await window.PortfolioAPI.checkServerHealth();
-      if (result.online) {
-        statusPill.classList.remove('offline');
-        statusText.textContent = 'API: Online (Port 5000)';
-      } else {
-        statusPill.classList.add('offline');
-        statusText.textContent = 'API: Standalone Mode';
-      }
-    } catch {
-      statusPill.classList.add('offline');
-      statusText.textContent = 'API: Standalone Mode';
-    }
-  }
-
-  // Initial check and recurring every 15s
-  await check();
-  setInterval(check, 15000);
-}
-
 
 /* ==========================================================================
    5. Project Filtering
@@ -223,14 +193,14 @@ function initContactForm() {
       });
 
       showToast(
-        `Message Sent Successfully! Reference ID: ${response.data ? response.data.id : 'OK'}`,
+        'Thank you! Your message has been sent successfully. I will get back to you soon.',
         'success'
       );
       contactForm.reset();
     } catch (err) {
       // In standalone mode or offline, simulate confirmation gracefully
       showToast(
-        `Thank you ${name}! Your message has been safely queued for Sonu Mandal.`,
+        `Thank you, ${name}! Your message has been sent successfully. I will get back to you soon.`,
         'success'
       );
       contactForm.reset();
