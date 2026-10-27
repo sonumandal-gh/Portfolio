@@ -42,7 +42,11 @@ class MessageModel {
 
     messages.unshift(newMessage);
 
-    fs.writeFileSync(DATA_FILE, JSON.stringify(messages, null, 2), 'utf-8');
+    try {
+      fs.writeFileSync(DATA_FILE, JSON.stringify(messages, null, 2), 'utf-8');
+    } catch (writeErr) {
+      console.warn('Could not persist message to local file (serverless environment):', writeErr.message);
+    }
     return newMessage;
   }
 
