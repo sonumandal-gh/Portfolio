@@ -2,16 +2,27 @@ const fs = require('fs');
 const path = require('path');
 const INITIAL_DATA = require('../config/constants');
 
-const DATA_FILE = path.join(__dirname, '../data/portfolio.json');
+const SEED_DATA_FILE = path.join(__dirname, '../data/portfolio.json');
+const DATA_FILE = process.env.VERCEL ? path.join('/tmp', 'portfolio.json') : SEED_DATA_FILE;
 
 // Initialize storage with constants data if file doesn't exist
 function initStorage() {
-  const dir = path.dirname(DATA_FILE);
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir, { recursive: true });
-  }
-  if (!fs.existsSync(DATA_FILE)) {
-    fs.writeFileSync(DATA_FILE, JSON.stringify(INITIAL_DATA, null, 2), 'utf-8');
+  try {
+    const dir = path.dirname(DATA_FILE);
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+    }
+    if (!fs.existsSync(DATA_FILE)) {
+      let initialData = JSON.stringify(INITIAL_DATA, null, 2);
+      if (fs.existsSync(SEED_DATA_FILE)) {
+        try {
+          initialData = fs.readFileSync(SEED_DATA_FILE, 'utf-8');
+        } catch (e) {}
+      }
+      fs.writeFileSync(DATA_FILE, initialData, 'utf-8');
+    }
+  } catch (err) {
+    console.warn('Portfolio initStorage notice:', err.message);
   }
 }
 
@@ -21,6 +32,10 @@ class PortfolioModel {
   static get() {
     try {
       if (!fs.existsSync(DATA_FILE)) {
+        if (fs.existsSync(SEED_DATA_FILE)) {
+          const rawSeed = fs.readFileSync(SEED_DATA_FILE, 'utf-8');
+          return JSON.parse(rawSeed || '{}');
+        }
         initStorage();
       }
       const raw = fs.readFileSync(DATA_FILE, 'utf-8');

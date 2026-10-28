@@ -136,7 +136,18 @@ const PortfolioAPI = {
     }
   },
 
+  getLocalCustomData() {
+    try {
+      const saved = localStorage.getItem('portfolio_custom_data');
+      return saved ? JSON.parse(saved) : null;
+    } catch {
+      return null;
+    }
+  },
+
   async getProfile() {
+    const custom = this.getLocalCustomData();
+    if (custom && custom.profile) return custom.profile;
     try {
       const response = await fetch(`${this.baseUrl}/profile`);
       if (!response.ok) throw new Error('Network error');
@@ -148,6 +159,8 @@ const PortfolioAPI = {
   },
 
   async getStats() {
+    const custom = this.getLocalCustomData();
+    if (custom && custom.stats) return custom.stats;
     try {
       const response = await fetch(`${this.baseUrl}/stats`);
       if (!response.ok) throw new Error('Network error');
@@ -159,6 +172,12 @@ const PortfolioAPI = {
   },
 
   async getProjects(category = 'all') {
+    const custom = this.getLocalCustomData();
+    const list = (custom && custom.projects) ? custom.projects : null;
+    if (list) {
+      if (category === 'all') return list;
+      return list.filter(p => p.category.toLowerCase().includes(category.toLowerCase()));
+    }
     try {
       const url = category && category !== 'all' 
         ? `${this.baseUrl}/projects?category=${encodeURIComponent(category)}`
@@ -174,6 +193,8 @@ const PortfolioAPI = {
   },
 
   async getSkills() {
+    const custom = this.getLocalCustomData();
+    if (custom && custom.technicalSkills) return custom.technicalSkills;
     try {
       const response = await fetch(`${this.baseUrl}/skills`);
       if (!response.ok) throw new Error('Network error');
@@ -335,4 +356,5 @@ const PortfolioAPI = {
   }
 };
 
+PortfolioAPI.FALLBACK_DATA = FALLBACK_DATA;
 window.PortfolioAPI = PortfolioAPI;
