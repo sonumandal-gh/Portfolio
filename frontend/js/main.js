@@ -185,25 +185,31 @@ function initContactForm() {
     submitBtn.textContent = 'Sending Message... 🚀';
 
     try {
-      const response = await window.PortfolioAPI.sendContactMessage({
+      const result = await window.PortfolioAPI.sendContactMessage({
         name,
         email,
         subject,
         message
       });
 
-      showToast(
-        'Thank you! Your message has been sent successfully. I will get back to you soon.',
-        'success'
-      );
+      if (result && result.activationNeeded) {
+        showToast(
+          'Message dispatched! FormSubmit sent a 1-time activation link to your Gmail. Please click "Activate Form" in your inbox.',
+          'success'
+        );
+      } else {
+        showToast(
+          (result && result.message) || 'Thank you! Your message has been sent successfully. I will get back to you soon.',
+          'success'
+        );
+      }
       contactForm.reset();
     } catch (err) {
-      // In standalone mode or offline, simulate confirmation gracefully
+      console.error('Contact submission error:', err);
       showToast(
-        `Thank you, ${name}! Your message has been sent successfully. I will get back to you soon.`,
-        'success'
+        err.message || 'Could not send message. Please email directly at sonu.bcastudent@gmail.com',
+        'error'
       );
-      contactForm.reset();
     } finally {
       submitBtn.disabled = false;
       submitBtn.textContent = 'Send Message ✉️';

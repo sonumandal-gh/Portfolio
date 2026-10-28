@@ -2,7 +2,8 @@ const nodemailer = require('nodemailer');
 const fs = require('fs');
 const path = require('path');
 
-const CONFIG_FILE = path.join(__dirname, '../data/emailConfig.json');
+const SEED_CONFIG_FILE = path.join(__dirname, '../data/emailConfig.json');
+const CONFIG_FILE = process.env.VERCEL ? path.join('/tmp', 'emailConfig.json') : SEED_CONFIG_FILE;
 
 class EmailService {
   /**
@@ -10,12 +11,13 @@ class EmailService {
    */
   static getConfig() {
     let savedConfig = {};
-    if (fs.existsSync(CONFIG_FILE)) {
+    const targetFile = fs.existsSync(CONFIG_FILE) ? CONFIG_FILE : (fs.existsSync(SEED_CONFIG_FILE) ? SEED_CONFIG_FILE : null);
+    if (targetFile) {
       try {
-        const raw = fs.readFileSync(CONFIG_FILE, 'utf-8');
+        const raw = fs.readFileSync(targetFile, 'utf-8');
         savedConfig = JSON.parse(raw || '{}');
       } catch (err) {
-        console.error('Error reading emailConfig.json:', err.message);
+        console.error('Error reading email config:', err.message);
       }
     }
 
@@ -32,22 +34,27 @@ class EmailService {
    * Saves updated email configuration to file
    */
   static saveConfig(newConfig) {
-    const dir = path.dirname(CONFIG_FILE);
-    if (!fs.existsSync(dir)) {
-      fs.mkdirSync(dir, { recursive: true });
+    try {
+      const dir = path.dirname(CONFIG_FILE);
+      if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
+      }
+
+      const current = this.getConfig();
+      const updated = {
+        service: newConfig.service || current.service,
+        user: newConfig.user !== undefined ? newConfig.user.trim() : current.user,
+        pass: newConfig.pass !== undefined ? newConfig.pass.trim() : current.pass,
+        notificationEmail: newConfig.notificationEmail !== undefined ? newConfig.notificationEmail.trim() : current.notificationEmail,
+        enabled: newConfig.enabled !== undefined ? Boolean(newConfig.enabled) : current.enabled
+      };
+
+      fs.writeFileSync(CONFIG_FILE, JSON.stringify(updated, null, 2), 'utf-8');
+      return updated;
+    } catch (saveErr) {
+      console.warn('Could not save emailConfig file (serverless environment):', saveErr.message);
+      return newConfig;
     }
-
-    const current = this.getConfig();
-    const updated = {
-      service: newConfig.service || current.service,
-      user: newConfig.user !== undefined ? newConfig.user.trim() : current.user,
-      pass: newConfig.pass !== undefined ? newConfig.pass.trim() : current.pass,
-      notificationEmail: newConfig.notificationEmail !== undefined ? newConfig.notificationEmail.trim() : current.notificationEmail,
-      enabled: newConfig.enabled !== undefined ? Boolean(newConfig.enabled) : current.enabled
-    };
-
-    fs.writeFileSync(CONFIG_FILE, JSON.stringify(updated, null, 2), 'utf-8');
-    return updated;
   }
 
   /**

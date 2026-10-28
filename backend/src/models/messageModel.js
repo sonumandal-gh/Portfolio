@@ -1,16 +1,27 @@
 const fs = require('fs');
 const path = require('path');
 
-const DATA_FILE = path.join(__dirname, '../data/messages.json');
+const SEED_DATA_FILE = path.join(__dirname, '../data/messages.json');
+const DATA_FILE = process.env.VERCEL ? path.join('/tmp', 'messages.json') : SEED_DATA_FILE;
 
 // Ensure data directory and file exist
 function initStorage() {
-  const dir = path.dirname(DATA_FILE);
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir, { recursive: true });
-  }
-  if (!fs.existsSync(DATA_FILE)) {
-    fs.writeFileSync(DATA_FILE, JSON.stringify([], null, 2), 'utf-8');
+  try {
+    const dir = path.dirname(DATA_FILE);
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+    }
+    if (!fs.existsSync(DATA_FILE)) {
+      let initialData = '[]';
+      if (fs.existsSync(SEED_DATA_FILE)) {
+        try {
+          initialData = fs.readFileSync(SEED_DATA_FILE, 'utf-8');
+        } catch (e) {}
+      }
+      fs.writeFileSync(DATA_FILE, initialData || '[]', 'utf-8');
+    }
+  } catch (err) {
+    console.warn('initStorage notice:', err.message);
   }
 }
 
@@ -19,6 +30,10 @@ initStorage();
 class MessageModel {
   static getAll() {
     try {
+      if (!fs.existsSync(DATA_FILE) && fs.existsSync(SEED_DATA_FILE)) {
+        const seed = fs.readFileSync(SEED_DATA_FILE, 'utf-8');
+        return JSON.parse(seed || '[]');
+      }
       const data = fs.readFileSync(DATA_FILE, 'utf-8');
       return JSON.parse(data || '[]');
     } catch (err) {

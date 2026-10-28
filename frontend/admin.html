@@ -1003,7 +1003,25 @@
 
     function renderMessages() {
       const container = document.getElementById('messagesListContainer');
-      const messages = portfolioData.messages || [];
+      let messages = Array.isArray(portfolioData.messages) ? [...portfolioData.messages] : [];
+
+      // Also merge any browser-stored messages from direct submissions
+      try {
+        const localMsgs = JSON.parse(localStorage.getItem('portfolio_contact_messages') || '[]');
+        if (Array.isArray(localMsgs) && localMsgs.length > 0) {
+          const existingIds = new Set(messages.map(m => m.id));
+          localMsgs.forEach(lm => {
+            if (!existingIds.has(lm.id)) {
+              messages.push(lm);
+            }
+          });
+          // Sort newest first
+          messages.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+        }
+      } catch (e) {
+        console.warn('Error reading local contact messages:', e);
+      }
+
       document.getElementById('msgCount').textContent = messages.length;
 
       if (messages.length === 0) {
