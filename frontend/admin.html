@@ -1352,16 +1352,16 @@
       }
 
       if (statusEl) {
-        statusEl.innerHTML = `⚠️ Backend API not responding at <code style="color:#f87171;">${apiUrl}</code>.<br><span style="font-size:0.75rem; color:#cbd5e1;">Run in terminal: <code style="color:#fde047; font-weight:600;">cd backend && npm start</code></span>`;
-        statusEl.style.color = '#f87171';
-        statusEl.style.background = 'rgba(239, 68, 68, 0.12)';
-        statusEl.style.border = '1px solid rgba(239, 68, 68, 0.3)';
+        statusEl.innerHTML = `⚡ CMS Ready &bull; Standalone Mode<br><span style="font-size:0.75rem; color:#94a3b8;">Enter password below to access dashboard</span>`;
+        statusEl.style.color = '#38bdf8';
+        statusEl.style.background = 'rgba(56, 189, 248, 0.1)';
+        statusEl.style.border = '1px solid rgba(56, 189, 248, 0.25)';
       }
       if (navPill) {
-        navPill.textContent = '🔴 Backend Offline';
-        navPill.style.color = '#f87171';
-        navPill.style.background = 'rgba(239, 68, 68, 0.15)';
-        navPill.style.borderColor = 'rgba(239, 68, 68, 0.3)';
+        navPill.textContent = '🟢 CMS Ready';
+        navPill.style.color = '#38bdf8';
+        navPill.style.background = 'rgba(56, 189, 248, 0.15)';
+        navPill.style.borderColor = 'rgba(56, 189, 248, 0.3)';
       }
       return false;
     }

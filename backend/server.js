@@ -64,6 +64,7 @@ app.use('/api/admin', adminRoutes);
 // Serverless fallback aliases (if Vercel rewrites strip /api prefix)
 app.use('/contact', contactRoutes);
 app.use('/admin', adminRoutes);
+app.use('/', portfolioRoutes);
 
 // 404 & Central Error Handling
 app.use(notFoundHandler);
